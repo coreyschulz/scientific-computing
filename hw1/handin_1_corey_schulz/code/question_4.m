@@ -13,7 +13,8 @@ degrees = [28 36 44 52 60];
 
 n = 1001; 
 b = 1; 
-a = -1; 
+aGelb = -1;
+aHubbard = 0; 
 
 counter = 1; 
 
@@ -27,13 +28,13 @@ for i = 1 : 5
   
   % Error: 
   errorPchipHubbard = pHubbard - ySampleHubbard';
-  l1PchipHubbard = ((b - a) / (n - 1)) * norm(errorPchipHubbard, 1);
-  l2PchipHubbard = sqrt((b - a) / (n - 1)) * norm(errorPchipHubbard, 2);
+  l1PchipHubbard = ((b - aHubbard) / (n - 1)) * norm(errorPchipHubbard, 1);
+  l2PchipHubbard = sqrt((b - aHubbard) / (n - 1)) * norm(errorPchipHubbard, 2);
   lInfPchipHubbard = norm(errorPchipHubbard, Inf);
   
   errorSplineHubbard = sHubbard - ySampleHubbard'; 
-  l1SplineHubbard = ((b - a) / (n - 1)) * norm(errorSplineHubbard, 1);
-  l2SplineHubbard = sqrt((b - a) / (n - 1)) * norm(errorSplineHubbard, 2);
+  l1SplineHubbard = ((b - aHubbard) / (n - 1)) * norm(errorSplineHubbard, 1);
+  l2SplineHubbard = sqrt((b - aHubbard) / (n - 1)) * norm(errorSplineHubbard, 2);
   lInfSplineHubbard = norm(errorSplineHubbard, Inf);
   %%%%%%%% END HUBBARD %%%%%%%%%%
   
@@ -45,13 +46,13 @@ for i = 1 : 5
   
   % Error: 
   errorPchipGelb = pGelb - ySampleGelb'; 
-  l1PchipGelb = ((b - a) / (n - 1)) * norm(errorPchipGelb, 1);
-  l2PchipGelb = sqrt((b - a) / (n - 1)) * norm(errorPchipGelb, 2);
+  l1PchipGelb = ((b - aGelb) / (n - 1)) * norm(errorPchipGelb, 1);
+  l2PchipGelb = sqrt((b - aGelb) / (n - 1)) * norm(errorPchipGelb, 2);
   lInfPchipGelb = norm(errorPchipGelb, Inf); 
   
   errorSplineGelb = sGelb - ySampleGelb'; 
-  l1SplineGelb = ((b - a) / (n - 1)) * norm(errorSplineGelb, 1);
-  l2SplineGelb = sqrt((b - a) / (n - 1)) * norm(errorSplineGelb, 2);
+  l1SplineGelb = ((b - aGelb) / (n - 1)) * norm(errorSplineGelb, 1);
+  l2SplineGelb = sqrt((b - aGelb) / (n - 1)) * norm(errorSplineGelb, 2);
   lInfSplineGelb = norm(errorSplineGelb, Inf); 
   %%%%%%%% END GELB TANNER %%%%%%%%%%
  
